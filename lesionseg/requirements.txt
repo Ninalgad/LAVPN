@@ -1,0 +1,7 @@
+SimpleITK
+numpy
+torchio==0.18.92
+torch
+ternausnet
+torchvision
+scipy
