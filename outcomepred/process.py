@@ -82,7 +82,12 @@ def run():
     # Process the inputs: any way you'd like
     _show_torch_cuda_info()
     device = get_default_device()
-    paths = ["outcomes-model-2150913.pt"]
+    paths = [
+        "outcomes-model-11254.pt", "outcomes-model-19529.pt", "outcomes-model-660969.pt",
+        "outcomes-model-682359.pt", "outcomes-model-944415.pt", "outcomes-model-2150913.pt",
+        "outcomes-model-47554755.pt", "outcomes-model-76607660.pt", "outcomes-model-94835948.pt",
+        "outcomes-model-4618746.pt"
+    ]
 
     with torch.no_grad():
         inp = torch.from_numpy(inp).to(device)
@@ -104,7 +109,7 @@ def run():
             ensemble_prediction += out
             del out
 
-        thresh = max(1, int(len(paths) / 2))
+        thresh = max(1, 1 + int(len(paths) / 2))
         output_2_year_neurocognitive_outcome = (ensemble_prediction >= thresh).astype(np.uint8)
 
     # Save your output

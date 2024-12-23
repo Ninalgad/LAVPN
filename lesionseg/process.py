@@ -88,8 +88,10 @@ def run():
 
     inp = create_input_array(z_adc, adc_ss, 256, channels_first=True)  # (n, 3 256, 256)
     device = get_default_device()
-    paths = ["model-2150913.pt", "model-944415.pt", "model-682359.pt", "model-660969.pt", "model-19529.pt",
-             "model-11254.pt"]
+    paths = [
+        "model-2150913.pt", "model-944415.pt", "model-682359.pt", "model-660969.pt", "model-19529.pt",
+        "model-11254.pt", "model-94835948.pt", "model-47554755.pt", "model-4618746.pt"
+    ]
 
     # Process the inputs: any way you'd like
     _show_torch_cuda_info()
